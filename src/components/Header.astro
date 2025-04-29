@@ -1,5 +1,30 @@
 ---
+// Header.astro
 ---
-<div>
-Header - tilføj navigation mm.
-</div>
+
+<header class="flex items-center justify-between px-6 py-4">
+  <div class="flex items-center">
+    <a href="/" class="flex items-center space-x-1">
+      <p class="text-white">Höjskolen</p>
+      <p class="text-orange-500">DK</p>
+    </a>
+  </div>
+
+  <!-- Navigation Links + Button -->
+  <nav class="flex items-center space-x-6">
+    <a href="#home" class="text-white hover:text-orange-400 font-medium"
+      >Højskoleophold</a
+    >
+    <a href="#about" class="text-white hover:text-orange-400 font-medium"
+      >Priser</a
+    >
+    <a href="#contact" class="text-white hover:text-orange-400 font-medium"
+      >Om os</a
+    >
+    <button
+      class="ml-4 px-4 py-2 bg-orange-400 text-white rounded-lg hover:bg-orange-700 transition"
+    >
+      Sign Up
+    </button>
+  </nav>
+</header>

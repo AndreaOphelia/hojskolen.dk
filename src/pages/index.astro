@@ -1,15 +1,146 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Button from '../components/Button.astro';
-import Link from '../components/Link.astro';
-import { Image } from 'astro:assets';
+import Button from "../components/Button.astro";
+import Link from "../components/Link.astro";
+import { Image } from "astro:assets";
 import thumbsup from "../assets/images/thumbsup.png";
+import Header from "../components/Header.astro";
 ---
+
 <MainLayout title="Titel">
-	<article>
-		<h1>Index overskrift</h1>
-		<Button>Klik!</Button>
-		<p>Link til <Link href="https://www.kea.dk" target="_blank">En anden side</Link></p>
-		<Image src={thumbsup} alt=""></Image>
-	</article>
+  <section
+    class="relative w-full h-screen bg-cover bg-center"
+    style="background-image: url('/img/hero.png');"
+  >
+    <Header />
+    <h1
+      class="absolute bottom-0 left-0 mb-8 ml-8 text-white text-4xl md:text-6xl font-bold"
+    >
+      Se verden og Mød dem, du aldrig glemmer.
+    </h1>
+  </section>
+  <section class="container mx-auto px-4 py-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Tekst-blokken -->
+      <div>
+        <h1 class="text-3xl font-bold mb-4">Er du klar til dit livs eventyr</h1>
+        <p class="mb-4">
+          Höjskolendk er en dansk højskole for unge i alderen ca. 18-30 år. Vi
+          brænder for oplevelser, fællesskab og mødet med nye mennesker og
+          kulturer; derfor laver vi eventyrlige højskoleophold i udlandet.
+          Höjskolendk er noget for dig, hvis du vil på højskole i udlandet og er
+          vild med højskolefællesskab, vil med på et fantastisk rejseeventyr,
+          glæder dig til at lære om fremmede kulturer, vil rejse med rygsæk,
+          drømmer om en fed grupperejse med andre skønne unge, vil opleve et
+          stærkt sammenhold og ønsker inspirerende og meningsfuld undervisning.
+          Du er sikker på en tryg rejseoplevelse da vi er medlem af
+          Rejsegarantifonden. Vi glæder os til at lære dig at kende!
+        </p>
+        <Button>Vælg Dit Eventyr</Button>
+      </div>
+      <!-- Billed-blokken -->
+      <div class="flex items-center justify-center">
+        <img
+          src="/img/people.png"
+          alt="billede her"
+          class="w-full h-auto rounded-lg"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="relative overflow-hidden py-8">
+    <!-- Scrollbar-container -->
+    <div id="gallery" class="flex space-x-4 overflow-x-auto scroll-smooth px-8">
+      <!-- Billede 1 -->
+      <div class="relative shrink-0 w-64 h-40 sm:w-80 sm:h-48 md:w-96 md:h-56">
+        <img
+          src="/img/nepal.png"
+          alt="Billede 1"
+          class="w-full h-full object-cover rounded-lg"
+        />
+        <div
+          class="absolute bottom-2 left-2 text-white text-lg px-2 py-1 rounded"
+        >
+          <h1>Nepal</h1>
+        </div>
+      </div>
+
+      <!-- Billede 2 -->
+      <div class="relative shrink-0 w-64 h-40 sm:w-80 sm:h-48 md:w-96 md:h-56">
+        <img
+          src="/img/gili.png"
+          alt="Billede 2"
+          class="w-full h-full object-cover rounded-lg"
+        />
+        <div
+          class="absolute bottom-2 left-2 text-white text-lg px-2 py-1 rounded"
+        >
+          <h1>Gili</h1>
+        </div>
+      </div>
+
+      <!-- Billede 3 -->
+      <div class="relative shrink-0 w-64 h-40 sm:w-80 sm:h-48 md:w-96 md:h-56">
+        <img
+          src="/img/australien.png"
+          alt="Billede 3"
+          class="w-full h-full object-cover rounded-lg"
+        />
+        <div
+          class="absolute bottom-2 left-2 text-white text-lg px-2 py-1 rounded"
+        >
+          <h1>Australien</h1>
+        </div>
+      </div>
+
+      <!-- Billede 3 -->
+      <div class="relative shrink-0 w-64 h-40 sm:w-80 sm:h-48 md:w-96 md:h-56">
+        <img
+          src="/img/australien.png"
+          alt="Billede 3"
+          class="w-full h-full object-cover rounded-lg"
+        />
+        <div
+          class="absolute bottom-2 left-2 text-white text-lg px-2 py-1 rounded"
+        >
+          <h1>Australien</h1>
+        </div>
+      </div>
+
+      <!-- Venstre pil -->
+      <button
+        id="scroll-left"
+        class="absolute top-1/2 left-4 transform -translate-y-1/2 z-20 p-2 bg-white bg-opacity-50 rounded-full hover:bg-opacity-75 cursor-pointer"
+      >
+        <img src="/img/arrowleft.png" alt="Forrige" class="w-8 h-8" />
+      </button>
+
+      <!-- Højre pil -->
+      <button
+        id="scroll-right"
+        class="absolute top-1/2 right-4 transform -translate-y-1/2 z-20 p-2 bg-white bg-opacity-50 rounded-full hover:bg-opacity-75 cursor-pointer"
+      >
+        <img src="/img/arrowright.png" alt="Næste" class="w-8 h-8" />
+      </button>
+    </div>
+  </section>
+
+  <script>
+    // JavaScript til at håndtere scroll-knapperne
+    (function () {
+      const gallery = document.getElementById("gallery");
+      const btnLeft = document.getElementById("scroll-left");
+      const btnRight = document.getElementById("scroll-right");
+      const scrollAmount = gallery.clientWidth; // Scroll én "skærm"-bredde ad gangen
+
+      btnLeft.addEventListener("click", () => {
+        gallery.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+      });
+
+      btnRight.addEventListener("click", () => {
+        gallery.scrollBy({ left: scrollAmount, behavior: "smooth" });
+      });
+    })();
+  </script>
 </MainLayout>

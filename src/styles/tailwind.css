@@ -1,8 +1,7 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @plugin '@tailwindcss/typography';
 @plugin '@tailwindcss/forms';
-
 
 @theme {
   /* Her tilføjes theme variable // tokens */
@@ -16,11 +15,33 @@
   ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
   }
+
+  @font-face {
+    font-family: "Passion One";
+    src: url("/PassionOne-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Nunito";
+    src: url("/Nunitosans.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+  }
 }
 
-@layer components{
-
+@layer components {
 }
-@layer utilities{
-  
+@layer utilities {
+}
+
+h1 {
+  font-family: "Passion One", sans-serif;
+  color: white;
+  -webkit-text-stroke: 1px #fb923c;
+}
+
+p,
+a {
+  font-family: "Nunito", sans-serif;
 }
