@@ -54,7 +54,7 @@ import Cardreview from "../components/Cardreview.astro";
     <!-- Scrollbar-container -->
     <div id="gallery" class="flex space-x-4 overflow-x-auto scroll-smooth px-8">
       <!-- Billede 1 -->
-      <div class="relative shrink-0 w-64 h-40 sm:w-80 sm:h-48 md:w-96 md:h-56">
+      <div class="relative shrink-0 w-40 h-64 sm:w-80 sm:h-48 md:w-96 md:h-56">
         <img
           src="/img/nepal.png"
           alt="Billede 1"
@@ -68,7 +68,7 @@ import Cardreview from "../components/Cardreview.astro";
       </div>
 
       <!-- Billede 2 -->
-      <div class="relative shrink-0 w-64 h-40 sm:w-80 sm:h-48 md:w-96 md:h-56">
+      <div class="relative shrink-0 w-40 h-64 sm:w-80 sm:h-48 md:w-96 md:h-56">
         <img
           src="/img/gili.png"
           alt="Billede 2"
@@ -82,7 +82,7 @@ import Cardreview from "../components/Cardreview.astro";
       </div>
 
       <!-- Billede 3 -->
-      <div class="relative shrink-0 w-64 h-40 sm:w-80 sm:h-48 md:w-96 md:h-56">
+      <div class="relative shrink-0 w-40 h-64 sm:w-80 sm:h-48 md:w-96 md:h-56">
         <img
           src="/img/australien.png"
           alt="Billede 3"
@@ -96,7 +96,7 @@ import Cardreview from "../components/Cardreview.astro";
       </div>
 
       <!-- Billede 3 -->
-      <div class="relative shrink-0 w-64 h-40 sm:w-80 sm:h-48 md:w-96 md:h-56">
+      <div class="relative shrink-0 w-40 h-64 sm:w-80 sm:h-48 md:w-96 md:h-56">
         <img
           src="/img/australien.png"
           alt="Billede 3"
@@ -109,7 +109,7 @@ import Cardreview from "../components/Cardreview.astro";
         </div>
       </div>
       <!-- Billede 3 -->
-      <div class="relative shrink-0 w-64 h-40 sm:w-80 sm:h-48 md:w-96 md:h-56">
+      <div class="relative shrink-0 w-40 h-64 sm:w-80 sm:h-48 md:w-96 md:h-56">
         <img
           src="/img/japan.png"
           alt="Billede 3"
@@ -147,7 +147,7 @@ import Cardreview from "../components/Cardreview.astro";
   <section class="container max-w-6xl mx-auto px-4 py-8 mb-10">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       <div>
-        <h2 class="text-3xl font-bold mb-4">Rejse højskole</h2>
+        <h1 class="text-3xl font-bold mb-4">Rejse højskole</h1>
         <p class="">
           Der venter dig et unikt rejseeventyr når du tager på højskole i
           udlandet, med et stærkt sammenhold og fede rejseoplevelser. Med
@@ -171,7 +171,7 @@ import Cardreview from "../components/Cardreview.astro";
         <img src="/img/pic2.png" alt="Ø gruppe" />
       </div>
       <div>
-        <h2 class="text-3xl font-bold mb-4">Gør drømmen til virkelighed</h2>
+        <h1 class="text-3xl font-bold mb-4">Gør drømmen til virkelighed</h1>
         <p>
           Vores elever beskriver HÖJSKOLENDK som ”eventyrlige dannelsesrejser
           med noget på hjerte”. Udover det fantastiske rejseeventyr handler
@@ -191,7 +191,7 @@ import Cardreview from "../components/Cardreview.astro";
   <section class="container max-w-6xl mx-auto px-4 py-6 mb-10">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       <div>
-        <h2 class="text-3xl font-bold mb-4">Højskoleophold i udlandet</h2>
+        <h1 class="text-3xl font-bold mb-4">Højskoleophold i udlandet</h1>
         <p>
           Når du rejser på højskole i udlandet med HÖJSKOLENDK bliver du en del
           af et fantastisk fællesskab med et stærkt sammenhold får du masser af
@@ -244,24 +244,23 @@ import Cardreview from "../components/Cardreview.astro";
     </div>
     <div class="flex justify-center">
       <Button> Læs flere andmeldelser </Button>
-
-      <script>
-        // JavaScript til at håndtere scroll-knapperne
-        (function () {
-          const gallery = document.getElementById("gallery");
-          const btnLeft = document.getElementById("scroll-left");
-          const btnRight = document.getElementById("scroll-right");
-          const scrollAmount = gallery.clientWidth; // Scroll én "skærm"-bredde ad gangen
-
-          btnLeft.addEventListener("click", () => {
-            gallery.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-          });
-
-          btnRight.addEventListener("click", () => {
-            gallery.scrollBy({ left: scrollAmount, behavior: "smooth" });
-          });
-        })();
-      </script>
     </div>
   </section>
 </MainLayout>
+<script>
+  // JavaScript til at håndtere scroll-knapperne
+  (function () {
+    const gallery = document.getElementById("gallery");
+    const btnLeft = document.getElementById("scroll-left");
+    const btnRight = document.getElementById("scroll-right");
+    const scrollAmount = gallery.clientWidth; // Scroll én "skærm"-bredde ad gangen
+
+    btnLeft.addEventListener("click", () => {
+      gallery.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+    });
+
+    btnRight.addEventListener("click", () => {
+      gallery.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    });
+  })();
+</script>
